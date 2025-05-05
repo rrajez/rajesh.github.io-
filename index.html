@@ -6,163 +6,32 @@
     <title>Rajesh R - Java Developer Portfolio</title>
     <style>
     :root {
-        --primary: #424242;
-        --secondary: #757575;
-        --accent: #ff4081;
-        --background: #fafafa;
-        --text: #212121;
-    }
+    --primary: #5e35b1;
+    --secondary: #7c4dff;
+    --accent: #b39ddb;
+    --background: #f3e5f5;
+    --text: #333333;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+header {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+}
 
-    body {
-        line-height: 1.6;
-        background-color: var(--background);
-        color: var(--text);
-    }
+.section {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
 
-    header {
-        background: var(--primary);
-        color: white;
-        text-align: center;
-        padding: 3rem;
-    }
+.skill-item {
+    background: var(--background);
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
 
-    .contact-info {
-        margin-top: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .contact-info a {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
-        transition: color 0.3s ease;
-    }
-
-    .contact-info a:hover {
-        color: var(--accent);
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 2rem;
-    }
-
-    .section {
-        background: white;
-        margin: 1.5rem 0;
-        padding: 2rem;
-        border-radius: 8px;
-        border: 1px solid #eee;
-        transition: transform 0.2s ease;
-    }
-
-    .section:hover {
-        transform: translateY(-2px);
-    }
-
-    h2 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        border-bottom: 2px solid var(--accent);
-        padding-bottom: 0.5rem;
-    }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .skill-item {
-        background: var(--background);
-        padding: 0.8rem;
-        border-radius: 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        border: 1px solid #eee;
-    }
-
-    .skill-item:hover {
-        background: var(--accent);
-        color: white;
-        transform: translateY(-3px);
-    }
-
-    .experience-item {
-        margin-bottom: 1.5rem;
-        padding: 1rem;
-        border-left: 3px solid var(--accent);
-    }
-
-    .experience-title {
-        color: var(--primary);
-        font-weight: bold;
-    }
-
-    .experience-company {
-        color: var(--secondary);
-        font-style: italic;
-    }
-
-    ul {
-        list-style-position: inside;
-        margin-left: 1rem;
-    }
-
-    .achievement-item {
-        background: var(--background);
-        padding: 1rem;
-        margin: 0.5rem 0;
-        border-radius: 8px;
-        border: 1px solid #eee;
-        transition: transform 0.2s ease;
-    }
-
-    .achievement-item:hover {
-        transform: translateX(10px);
-    }
-
-    /* Education and Certification styles */
-    .education-item, .certification-item {
-        padding: 1rem;
-        margin: 0.5rem 0;
-        border-radius: 8px;
-    }
-
-    /* Links style */
-    a {
-        color: var(--accent);
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    /* List items style */
-    ul li {
-        margin: 0.5rem 0;
-        list-style-type: none;
-        padding-left: 1.2rem;
-        position: relative;
-    }
-
-    ul li:before {
-        content: "•";
-        color: var(--accent);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
+.skill-item:hover {
+    transform: translateY(-3px);
+}
 </style>
 
 </head>
