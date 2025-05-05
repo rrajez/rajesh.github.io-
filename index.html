@@ -3,189 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajesh R - Java Developer Portfolio</title>
+    <title>Rajesh R - Java Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #2b3945;
+            --secondary: #3498db;
+            --accent: #00c853;
+            --text: #333;
+            --bg-light: #f8f9fa;
+            --gradient: linear-gradient(135deg, #2b3945, #3498db);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
             line-height: 1.6;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--bg-light);
+            color: var(--text);
         }
 
-        header {
-            background-color: #1a237e;
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
             color: white;
+            padding: 8rem 2rem;
             text-align: center;
-            padding: 3rem;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
-        .contact-info {
-            margin-top: 1rem;
-            font-size: 0.9rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
         }
 
-        .contact-info a {
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Social Links */
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--accent);
         }
 
+        /* Main Content */
         .container {
             max-width: 1200px;
-            margin: auto;
-            padding: 2rem;
+            margin: -100px auto 0;
+            padding: 0 2rem;
+            position: relative;
         }
 
         .section {
             background: white;
-            margin: 1.5rem 0;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
         }
 
         h2 {
-            color: #1a237e;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #1a237e;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
             padding-bottom: 0.5rem;
         }
 
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 60px;
+            background: var(--accent);
+        }
+
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .skill-item {
-            background: #f8f9fa;
-            padding: 0.5rem;
-            border-radius: 4px;
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 10px;
             text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
+        .skill-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Experience Section */
         .experience-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent);
+            background: var(--bg-light);
+            border-radius: 0 10px 10px 0;
         }
 
         .experience-title {
-            color: #1a237e;
-            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
 
         .experience-company {
-            color: #666;
-            font-style: italic;
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
 
-        ul {
-            list-style-position: inside;
-            margin-left: 1rem;
-        }
-
+        /* Achievements */
         .achievement-item {
-            background: #e8eaf6;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            border-radius: 4px;
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateX(10px);
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "→";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <section class="hero">
         <h1>RAJESH R</h1>
-        <p>Java Developer</p>
-        <div class="contact-info">
-            <a href="mailto:rajeshraji12199@gmail.com">rajeshraji12199@gmail.com</a> |
-            <a href="https://www.linkedin.com/in/rajesh-r-38a022263" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/rrajez" target="_blank">GitHub</a> |
-            <a href="https://hackerrank.com/rajeshraji12199" target="_blank">HackerRank</a>
+        <p>Java Developer | Backend Specialist</p>
+        <div class="social-links">
+            <a href="mailto:rajeshraji12199@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/rajesh-r-38a022263" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/rrajez" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://hackerrank.com/rajeshraji12199" target="_blank"><i class="fab fa-hackerrank"></i></a>
         </div>
-    </header>
+    </section>
 
     <div class="container">
         <section class="section">
-            <h2>OBJECTIVE</h2>
-            <p>Aspiring Java Developer seeking an opportunity to leverage my technical skills in Java, HTML, CSS, SQL, and
-                backend development. Eager to contribute to impactful projects, enhance my expertise, and grow in a
-                collaborative environment.</p>
+            <h2>About Me</h2>
+            <p>Aspiring Java Developer with 3 years of experience at Amazon Development Centre. Passionate about creating efficient backend solutions and implementing AI-driven automation. Proven track record of improving system efficiency and handling large-scale data operations.</p>
         </section>
 
         <section class="section">
-            <h2>TECHNICAL SKILLS</h2>
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-item">Java 8/11/17</div>
                 <div class="skill-item">Spring Boot</div>
-                <div class="skill-item">HTML5 & CSS3</div>
+                <div class="skill-item">Spring MVC</div>
+                <div class="skill-item">Hibernate</div>
                 <div class="skill-item">MySQL</div>
                 <div class="skill-item">PostgreSQL</div>
                 <div class="skill-item">REST APIs</div>
+                <div class="skill-item">HTML5 & CSS3</div>
                 <div class="skill-item">Git</div>
                 <div class="skill-item">Maven</div>
-                <div class="skill-item">JUnit</div>
-                <div class="skill-item">Mockito</div>
             </div>
         </section>
 
         <section class="section">
-            <h2>EXPERIENCE</h2>
+            <h2>Experience</h2>
             <div class="experience-item">
                 <h3 class="experience-title">Search Engine Data Associate</h3>
-                <p class="experience-company">Amazon Development Centre, Chennai (May 2024 – Present)</p>
+                <p class="experience-company">Amazon Development Centre, Chennai | May 2024 – Present</p>
                 <ul>
-                    <li>Developed backend solutions using Amazon Internal tools, improving search engine efficiency by 30%</li>
-                    <li>Processed and validated over 10,000 daily customer data inputs with 99.9% accuracy</li>
+                    <li>Developed backend solutions improving search engine efficiency by 30%</li>
+                    <li>Processed 10,000+ daily customer data inputs with 99.9% accuracy</li>
                     <li>Optimized data extraction workflow reducing processing time by 40%</li>
                 </ul>
             </div>
             <div class="experience-item">
                 <h3 class="experience-title">Machine Learning Data Associate</h3>
-                <p class="experience-company">Amazon Development Centre, Chennai (May 2022 – May 2024)</p>
+                <p class="experience-company">Amazon Development Centre, Chennai | May 2022 – May 2024</p>
                 <ul>
-                    <li>Managed backend operations for "Just Walk Out" technology, handling 1M+ daily transactions</li>
-                    <li>Developed AI tools that automated 75% of manual data processing tasks</li>
-                    <li>Achieved 99.8% accuracy in dataset annotation across 500,000+ entries</li>
+                    <li>Managed "Just Walk Out" technology backend operations</li>
+                    <li>Automated 75% of manual data processing tasks</li>
+                    <li>Achieved 99.8% accuracy in dataset annotation</li>
                 </ul>
             </div>
         </section>
 
         <section class="section">
-            <h2>ACHIEVEMENTS</h2>
+            <h2>Achievements</h2>
             <div class="achievement-item">
-                <p>🏆 Awarded Best Performer Recognition 2024, improving system efficiency by 40%</p>
+                <p>🏆 Best Performer Recognition 2024</p>
             </div>
             <div class="achievement-item">
-                <p>🌟 Recognized as Prime Player of the Month for exceeding targets by 120%</p>
+                <p>🌟 Prime Player of the Month</p>
             </div>
             <div class="achievement-item">
-                <p>👥 Led technical onboarding for 12+ team members with 100% success rate</p>
+                <p>👥 Successfully led technical onboarding for 12+ team members</p>
             </div>
         </section>
 
         <section class="section">
-            <h2>EDUCATION</h2>
-            <p><strong>Bachelor of Engineering in Mechanical Engineering</strong></p>
-            <p>GKM College of Engineering and Technology | Graduated: 2020</p>
-        </section>
-
-        <section class="section">
-            <h2>CERTIFICATIONS</h2>
-            <ul>
-                <li>Java Programming (28 Minutes Academy) - 2024</li>
-                <li>Master Communication Class (Think School) - 2024</li>
-                <li>Python Programming (Tim Buchalka's Learn Programming Academy) - 2023</li>
-            </ul>
+            <h2>Education & Certifications</h2>
+            <div class="experience-item">
+                <h3 class="experience-title">Bachelor of Engineering in Mechanical Engineering</h3>
+                <p class="experience-company">GKM College of Engineering and Technology | 2020</p>
+            </div>
+            <div class="achievement-item">
+                <p>✔️ Java Programming (28 Minutes Academy) - 2024</p>
+            </div>
+            <div class="achievement-item">
+                <p>✔️ Master Communication Class (Think School) - 2024</p>
+            </div>
+            <div class="achievement-item">
+                <p>✔️ Python Programming (Tim Buchalka's Academy) - 2023</p>
+            </div>
         </section>
     </div>
 </body>
